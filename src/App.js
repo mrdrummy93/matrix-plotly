@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Plot from 'react-plotly.js'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+      <Plot
+        data={[
+            {
+                x: ['SBCB', 'FXTB', 'RUSB'],
+                y: ['SBCB', 'FXTB', 'RUSB'],
+                z: [[1.0, 0.20, -0.30], [0.20, 1.0, -1.0], [-0.30, -1.0, 1.0]],
+                type: 'heatmap',
+                colorscale: [
+                  [0, '#ff0000'],
+                  [1, '#00ff00']
+                ]
+            }
+        ]}
+      />
+    );
 }
 
 export default App;
